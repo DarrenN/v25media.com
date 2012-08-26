@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background: #fbfbfb;
+  background: lighten($color-text-base, 77);
   text-rendering: optimizeLegibility;
 }
 
