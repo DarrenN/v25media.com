@@ -2,7 +2,6 @@ require "bundler"
 require "kramdown"
 require "sanitize"
 require "rack/codehighlighter"
-require "lib/coderwall_helpers"
 require "lib/uuid"
 require "date"
 
