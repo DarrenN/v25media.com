@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+
+		<title><%= data.page.title %> | Darren Newton Creative Services</title>
+
+		<meta name="description" content="<%= current_page.data.description %>" />
+		<meta name="keywords" content="<%= current_page.data.keywords %>" />
+		<meta name="author" content="<%= current_page.data.author %>" />
+		<meta name="msvalidate.01" content="BE7DA3BEF0F11153F6E4B5585C12DB20" />
+
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="<%= data.page.title %>" />
+		<meta property="og:url" content="http://v25media.com<%= current_page.url %>" />
+		<meta property="og:image" content="<%= current_page.data.image %>" />
+		<meta property="og:description" content="<%= current_page.data.description %>" />
+
+		<meta name="twitter:card" value="summary">
+		<meta name="twitter:creator" value="@d_run">
+
+		<link href="atom.xml" type="application/atom+xml" rel="alternate" title="<%= data.page.title %> ATOM Feed" />
+		<link href="atom.json" type="application/atom+json" rel="alternate" title="<%= data.page.title %> JSON Feed" />
+
+		<link rel="canonical" href="http://v25media.com<%= current_page.url %>">
+  		<%= favicon_tag 'favicon.ico' %>
+
+		<%= stylesheet_link_tag 'screen.css' %>
+
+		<script src="http://use.typekit.com/lbz5aep.js"></script>
+
+		<%= partial "google" %>
+	</head>
+	<body id="article">
+
+		<%= partial "topnav" %>
+
+		<div class="container">
+			<article class="hentry" itemscope itemtype="http://schema.org/Article">
+				<header>
+					<time class="updated" datetime="2010-08-07 11:11:03-0400" pubdate itemprop="datePublished"><%= current_article.date.strftime('%b %e, %Y') %></time>
+					<h1 class="entry-title" itemprop="name"><%= data.page.title %></h1>
+				</header>
+
+				<div class="entry-content" itemprop="articleBody">
+					<%= yield %>
+				</div>
+
+				<footer>
+					<div class="metadata">
+						<%= partial "tags" %>
+					</div>
+					<div class="nav-back">
+						<a href="/" title="">← Back to homepage</a>
+					</div>
+				</footer>
+			</article>
+		</div>
+
+		<div id="article-nav-container">
+			<aside id="article-nav" class="container">
+				<%= partial "blognav" %>
+			</aside>
+			<aside id="article-nav-mobile">
+				<a href="/"><span>&lt;</span> Back to homepage</a>
+			</aside>
+		</div>
+
+		<%= partial "footer" %>
+		
+		<script>try{Typekit.load();}catch(e){}</script>
+	</body>
+</html>
