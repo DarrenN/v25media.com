@@ -96,10 +96,10 @@ article {
 
     time {
       font-size: 1rem;
-      text-transform: uppercase;
+      text-transform: none;
       color: lighten($color-text-base, 40);
       display: block;
-      margin: 30px 0;
+      margin: 10px 0;
     }
 
     h1 {
@@ -261,7 +261,7 @@ article {
       span {
         font-weight: 600;
         display: inline-block;
-        padding: 5px 10px;
+        padding: 5px 5px 4px 6px;
         border-radius: 20px;
         background: lighten($color-text-base, 50);
         color: lighten($color-text-base, 70);
@@ -410,9 +410,17 @@ article {
     h1 {
       @include font-title(300);
       color: lighten($color-text-base, 40);
-      font-size: 1.8rem;
-      margin: 40px 0 10px 0;
+      font-size: 2.2rem;
+      margin: 40px 0 20px 0;
       @include ligatures;
+      line-height: 118%;
+    }
+    a {
+      text-decoration: none;
+      color: $color-link-base;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -434,12 +442,23 @@ article {
           color: $color-link-base;
         }
       }
+     time {
+        font-size: 0.8rem;
+        text-transform: none;
+        color: lighten($color-text-base, 40);
+        display: block;
+        margin: 0 0 40px 0;
+      }
       .metadata {
         font-weight: 300;
         color: lighten($color-text-base, 20);
+        font-size: 0.9rem;
         span, strong {
           color: lighten($color-text-base, 40);
           font-weight: 300;
+        }
+        li {
+          padding: 0 0 3px 0;
         }
       }
     }
@@ -670,6 +689,13 @@ article {
         }
         .metadata {
           margin: 0 0 20px 0;
+        }
+        time {
+          font-size: 0.8rem;
+          text-transform: none;
+          color: lighten($color-text-base, 40);
+          display: block;
+          margin: 0 0 10px 0;
         }
       }
       .entry-content {

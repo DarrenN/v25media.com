@@ -32,14 +32,16 @@
 		<div class="container" itemprop="blogPosts">
 
 			<hgroup>
-				<h1>A portfolio of user interface and general design work.</h1>
+				<h1>A portfolio of <a href="">user experience</a>, <a href="">interactive</a> and <a href="">graphic design</a> work hand crafted in Brooklyn.</a></h1>
 			</hgroup>
 
 			<% @pages.each do |p| %>
 			<% page = p.metadata[:page] %>
+			<a name="<%= page['title'].gsub(/ /,'-') %>" />
 			<article class="hentry" itemscope itemtype="http://schema.org/Article">
 				<header>
 					<h1 class="entry-title" itemprop="name"><%= link_to page['title'], p.url %></h1>
+					<time datetime="<%= Date.parse(page['date']).iso8601 %>"><%= Date.parse(page['date']).strftime('%B, %Y') %></time>
 					<div class="metadata">
 						<ul itemprop="keywords">
 							<% page['tags'].each do |tag| %>
@@ -62,7 +64,7 @@
 			<aside id="article-nav" class="container">
 				<ul>
 					<li id="article-nav-left">
-						<%= link_to "<span>&lt;</span> View all articles", '/archive' %>
+						<%= link_to "<span>&#9780;</span> Like anything you see here? Contact me on LinkedIn.", 'http://www.linkedin.com/in/darrennewton' %>
 					</li>
 					<li id="article-nav-right">
 						

@@ -39,6 +39,7 @@
 			<article class="hentry" itemscope itemtype="http://schema.org/Article">
 				<header>
 					<h1 class="entry-title" itemprop="name"><%= data.page.title %></h1>
+					<time datetime="<%= Date.parse(data.page.date).iso8601 %>"><%= Date.parse(data.page.date).strftime('%B, %Y') %></time>
 				</header>
 
 				<div class="entry-content" itemprop="articleBody">
@@ -62,7 +63,7 @@
 
 		<div id="article-nav-container">
 			<aside id="article-nav" class="container">
-			
+				
 			</aside>
 			<aside id="article-nav-mobile">
 				<a href="/"><span>&lt;</span> Back to homepage</a>
