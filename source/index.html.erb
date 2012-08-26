@@ -16,10 +16,6 @@
 		<meta name="twitter:card" value="summary">
 		<meta name="twitter:creator" value="@d_run">
 
-		<link rel="alternate" type="application/rss+xml" href="feed.rss" title="Sitewide RSS 2.0 Feed">
-		<link rel="alternate" type="application/atom+xml" href="atom.xml" title="Sitewide ATOM Feed">
-		<link rel="alternate" type="application/atom+json" href="atom.json" title="Sitewide JSON Feed">
-
 		<link rel="canonical" href="http://v25media.com">
   		<%= favicon_tag 'favicon.ico' %>
 
@@ -34,20 +30,29 @@
 		<%= partial "topnav" %>
 
 		<div class="container" itemprop="blogPosts">
-			<% blog.articles.each do |article| %>
+
+			<hgroup>
+				<h1>A portfolio of user interface and general design work.</h1>
+			</hgroup>
+
+			<% @pages.each do |p| %>
+			<% page = p.metadata[:page] %>
 			<article class="hentry" itemscope itemtype="http://schema.org/Article">
 				<header>
-					<h1 class="entry-title" itemprop="name"><%= link_to article.title, article.url %></h1>
-				</header>
-
-				<div class="entry-content" itemprop="articleBody">
-					<%= article.summary %><%= link_to 'Read more about ' + article.title + '&hellip;', article.url, :class => 'read-more' %>
-				</div>
-
-				<footer>
+					<h1 class="entry-title" itemprop="name"><%= link_to page['title'], p.url %></h1>
 					<div class="metadata">
-						<time class="updated" pubdate itemprop="datePublished" datetime="<%= article.date.strftime('%b-%e-%Y') %>"><span>Posted on</span> <%= article.date.strftime('%b %e, %Y') %></time> | <strong>Metadata:</strong> <%= article.tags.join(', ') %>
+						<ul itemprop="keywords">
+							<% page['tags'].each do |tag| %>
+							<li><%= tag %></li>							  
+							<% end %>
+						</ul>
 					</div>
+				</header>
+				<section class="entry-content">
+					<a href="<%= p.url %>"><img src="<%= page['image'] %>" /></a>
+				</section>
+				<footer>
+					
 				</footer>
 			</article>
 			<% end %>
@@ -60,7 +65,7 @@
 						<%= link_to "<span>&lt;</span> View all articles", '/archive' %>
 					</li>
 					<li id="article-nav-right">
-						<%= link_to blog.articles[1].title + " <span>&gt;</span>", blog.articles[1].url %> 
+						
 					</li>
 				</ul>
 			</aside>

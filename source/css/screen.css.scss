@@ -104,8 +104,8 @@ article {
 
     h1 {
       color: $color-text-base;
-      font-size: 2.4rem;
-      margin: 0 0 30px 0;
+      font-size: 1.8rem;
+      margin: 40px 0 10px 0;
       @include ligatures;
     }
   }
@@ -184,41 +184,6 @@ article {
 
     @include font-title(400);
 
-    .metadata {
-      @include span-columns(3,4);
-      strong {
-        color: lighten($color-text-base, 20);
-      }
-      ul {
-        display: inline-block;
-      }
-      li {
-        display: inline-block;
-        @include font-title(300);
-        color: lighten($color-text-base, 40);
-        a {
-          padding: 0 5px;
-          color: lighten($color-text-base, 40);
-          text-decoration: none;
-        }
-        a:hover {
-          color: $color-link-base;
-          text-decoration: underline;
-        }
-      }
-      li:after {
-        content: ' / ';
-      }
-      li:last-child {
-        a {
-          padding: 0 0 0 5px;
-        }
-      }
-      li:last-child:after {
-        content: '';
-      }
-    }
-
     .nav-back {
       @include span-columns(1 omega,4);
       text-align: right;
@@ -235,7 +200,40 @@ article {
 
 }
 
-
+ .metadata {
+    @include span-columns(3,4);
+    strong {
+      color: lighten($color-text-base, 20);
+    }
+    ul {
+      display: inline-block;
+    }
+    li {
+      display: inline-block;
+      @include font-title(300);
+      color: lighten($color-text-base, 40);
+      a {
+        padding: 0 5px;
+        color: lighten($color-text-base, 40);
+        text-decoration: none;
+      }
+      a:hover {
+        color: $color-link-base;
+        text-decoration: underline;
+      }
+    }
+    li:after {
+      content: ' / ';
+    }
+    li:last-child {
+      a {
+        padding: 0 0 0 5px;
+      }
+    }
+    li:last-child:after {
+      content: '';
+    }
+  }
 
 #article-nav-container {
   margin: 40px 0 0 0;
@@ -408,21 +406,49 @@ article {
 // Homepage Specific Styles
 // ===
 #home {
+  hgroup {
+    h1 {
+      @include font-title(300);
+      color: lighten($color-text-base, 40);
+      font-size: 1.8rem;
+      margin: 40px 0 10px 0;
+      @include ligatures;
+    }
+  }
+}
+
+#home {
   @extend #article;
   article {
+    padding: 40px 0 0 0;
     header {
+      @include span-columns(1,4);
       h1 {
-        margin: 40px 0 0 0;
+        margin: 0 0 10px 0;
+        font-size: 1.2rem;
         a {
-          color: $color-text-base;
+          color: lighten($color-text-base, 20);
           text-decoration: none;
         }
         a:hover {
           color: $color-link-base;
         }
       }
+      .metadata {
+        font-weight: 300;
+        color: lighten($color-text-base, 20);
+        span, strong {
+          color: lighten($color-text-base, 40);
+          font-weight: 300;
+        }
+      }
     }
     .entry-content {
+      @include span-columns(3 omega,4);
+      img {
+        width: 100%;
+        display: block;
+      }
       a.read-more {
         font-style: italic;
         padding: 0 0 0 10px;
@@ -430,15 +456,6 @@ article {
     }
     footer {
       border-bottom: #ccc 1px solid;
-      .metadata {
-        @include reset-columns;
-        font-weight: 400;
-        color: lighten($color-text-base, 20);
-        span, strong {
-          color: lighten($color-text-base, 40);
-          font-weight: 300;
-        }
-      }
     }
   }
   article:last-child {
@@ -633,6 +650,37 @@ article {
 // ===
 @include at-breakpoint(1em 4 40em) {
 
+  #home {
+    hgroup {
+      h1 {
+        text-align: center;
+        font-size: 1.2rem;
+        @include font-title(600);
+        margin: 20px 0 10px 0;
+      }
+    }
+    article {
+      padding: 20px 0 0 0;
+      header {
+        @include reset-columns;
+        text-align: left;
+        h1 {
+          margin: 0 0 5px 0;
+          font-size: 1.4rem;
+        }
+        .metadata {
+          margin: 0 0 20px 0;
+        }
+      }
+      .entry-content {
+        @include reset-columns;
+      }
+      footer {
+        padding: 10px 0 0 0;
+      }
+    }
+  }
+
   #masthead {
     clear: both;
     padding: 15px 0 15px 0;
@@ -650,13 +698,15 @@ article {
         margin: 0 auto;
         float: none;
         clear: both;
+        width: 60px;
+        height: 60px;
       }
       span {
         display: block;
         padding: 0;
         margin: 10px 0 0 0;
         position: relative;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 600;
         i {
           display: none;

@@ -37,9 +37,6 @@ GEM
       middleman-core (= 3.0.0)
       middleman-more (= 3.0.0)
       middleman-sprockets (= 3.0.0)
-    middleman-blog (3.0.0)
-      maruku (~> 0.6.0)
-      middleman-core (~> 3.0.0)
     middleman-core (3.0.0)
       activesupport (~> 3.2.6)
       bundler (~> 1.1)
@@ -76,9 +73,6 @@ GEM
       i18n (~> 0.6)
       padrino-core (= 0.10.7)
     rack (1.4.1)
-    rack-codehighlighter (0.5.0)
-      nokogiri (>= 1.4.1)
-      rack (>= 1.0.0)
     rack-protection (1.2.0)
       rack
     rack-test (0.6.1)
@@ -122,7 +116,5 @@ DEPENDENCIES
   coffee-filter
   kramdown
   middleman (~> 3.0.0)
-  middleman-blog (~> 3.0.0)
-  rack-codehighlighter
   sanitize
   susy

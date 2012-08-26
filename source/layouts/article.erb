@@ -22,9 +22,6 @@
 		<meta name="twitter:card" value="summary">
 		<meta name="twitter:creator" value="@d_run">
 
-		<link href="atom.xml" type="application/atom+xml" rel="alternate" title="<%= data.page.title %> ATOM Feed" />
-		<link href="atom.json" type="application/atom+json" rel="alternate" title="<%= data.page.title %> JSON Feed" />
-
 		<link rel="canonical" href="http://v25media.com<%= current_page.url %>">
   		<%= favicon_tag 'favicon.ico' %>
 
@@ -41,7 +38,6 @@
 		<div class="container">
 			<article class="hentry" itemscope itemtype="http://schema.org/Article">
 				<header>
-					<time class="updated" datetime="2010-08-07 11:11:03-0400" pubdate itemprop="datePublished"><%= current_article.date.strftime('%b %e, %Y') %></time>
 					<h1 class="entry-title" itemprop="name"><%= data.page.title %></h1>
 				</header>
 
@@ -51,7 +47,11 @@
 
 				<footer>
 					<div class="metadata">
-						<%= partial "tags" %>
+						<ul itemprop="keywords">
+							<% data.page.tags.each do |tag| %>
+							<li><%= tag %></li>							  
+							<% end %>
+						</ul>
 					</div>
 					<div class="nav-back">
 						<a href="/" title="">← Back to homepage</a>
@@ -62,7 +62,7 @@
 
 		<div id="article-nav-container">
 			<aside id="article-nav" class="container">
-				<%= partial "blognav" %>
+			
 			</aside>
 			<aside id="article-nav-mobile">
 				<a href="/"><span>&lt;</span> Back to homepage</a>

@@ -1,9 +1,17 @@
 require "bundler"
 require "kramdown"
 require "sanitize"
-require "rack/codehighlighter"
 require "lib/uuid"
 require "date"
+
+###
+# URLs
+###
+
+activate :directory_indexes
+
+# Assemble resources to generate archive pages, Atom & JSON feeds
+
 
 ### 
 # Compass
@@ -49,22 +57,54 @@ end
 # activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  # Properly format a content_entry_asset
+  def entry_asset(img, url = nil)
+    img_tag = image_tag img[:url], :itemprop => "image", :alt => img[:alt], :title => img[:title]
+    unless url.nil?
+      img_tag = link_to img_tag, url
+    end
+    '<div class="entry-content-asset photo-full">' + img_tag + '</div>'
+  end
+
+  # Strip all HTML tags from string
+  def strip_tags(html)
+    Sanitize.clean(html.strip).strip
+  end
+end
+
+###
+# Asset folders
+###
 
 set :css_dir, 'css'
-
 set :js_dir, 'js'
-
 set :images_dir, 'img'
+
+###
+# Template settings
+###
+set :markdown_engine, :kramdown
+set :markdown, :layout_engine => :erb, :tables => true, :autolink => true
+
+ready do
+  @pages = sitemap.resources.find_all{|p| p.destination_path.split('/')[0] == 'work' }.sort {|a,b| b.data['date'] <=> a.data['date']}
+end
+
+###
+# Page settings
+###
+page "/index.html", :layout => false
+page "404.html", :layout => false
+page "/work/index.html", :layout => false
+page "/sitemap.xml", :layout => "sitemap.xml"
+
 
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
+  activate :asset_hash
   
   # Minify Javascript on build
   # activate :minify_javascript
