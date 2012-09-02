@@ -25,21 +25,23 @@
 
 		<%= partial "google" %>
 	</head>
-	<body id="home" itemscope itemtype="http://schema.org/Blog">
+	<body id="home" itemscope itemtype="http://schema.org/ItemList">
 
 		<%= partial "topnav" %>
 
-		<div class="container" itemprop="blogPosts">
+		<div class="container" itemprop="articles">
 
 			<hgroup>
-				<h1>A portfolio of <a href="">user experience</a>, <a href="">interactive</a> and <a href="">graphic design</a> work hand crafted in Brooklyn.</a></h1>
+				<h1>A portfolio of <a href="/work/axa-scs-ios/">user experience</a>, <a href="/work/porsche/">interactive</a> and <a href="/work/barlow-group/">graphic design</a> work hand crafted in Brooklyn.</a></h1>
 			</hgroup>
+
+			<meta itemprop="itemListOrder" content="Descending" />
 
 			<% @pages.each do |p| %>
 			<% page = p.metadata[:page] %>
-			<a name="<%= page['title'].gsub(/ /,'-') %>" />
-			<article class="hentry" itemscope itemtype="http://schema.org/Article">
+			<article class="hentry" itemscope itemtype="http://schema.org/itemListElement">
 				<header>
+					<a name="<%= page['title'].gsub(/ /,'-') %>" />
 					<h1 class="entry-title" itemprop="name"><%= link_to page['title'], p.url %></h1>
 					<time datetime="<%= Date.parse(page['date']).iso8601 %>"><%= Date.parse(page['date']).strftime('%B, %Y') %></time>
 					<div class="metadata">
@@ -51,7 +53,7 @@
 					</div>
 				</header>
 				<section class="entry-content">
-					<a href="<%= p.url %>"><img src="<%= page['image'] %>" /></a>
+					<a href="<%= p.url %>" itemprop="url"><img src="<%= page['image'] %>" title="<%= page['title'] %>" itemprop="image" /></a>
 				</section>
 				<footer>
 					

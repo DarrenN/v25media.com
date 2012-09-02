@@ -338,7 +338,7 @@ article {
   border-bottom: darken($color-text-base, 10) 1px solid;
   font-size: 0.9rem;
   color: lighten($color-text-base, 50);
-  height: 40px;
+  height: 60px;
 }
 
 #colophon-a {
@@ -346,6 +346,9 @@ article {
   line-height: 140%;
   a {
     color: lighten($color-text-base, 80);
+  }
+  p {
+    margin: 0 0 20px 0;
   }
 }
 
