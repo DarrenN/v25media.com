@@ -10,7 +10,7 @@
    <% @pages.each do |p| %><% page = p.metadata[:page] %>
    <url>
       <loc>http://darrenknewton.com<%= p.url %></loc>
-      <lastmod><%= Date.parse(page['date']).strftime('%Y-%m-%d') %></lastmod>
+      <lastmod><%= Date.today.strftime('%Y-%m-%d') %></lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
