@@ -48,7 +48,8 @@
 					<div class="metadata">
 						<ul itemprop="keywords">
 							<% page['tags'].each do |tag| %>
-							<li><%= tag %></li>							  
+							<% if tag == 'Gabardine' then tag = '<a href="http://gabardine.com">Gabardine</a>'; end %>
+							<li><%= tag %></li>						  
 							<% end %>
 						</ul>
 					</div>

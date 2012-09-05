@@ -213,7 +213,7 @@ article {
       @include font-title(300);
       color: lighten($color-text-base, 40);
       a {
-        padding: 0 5px;
+        padding: 0px;
         color: lighten($color-text-base, 40);
         text-decoration: none;
       }
@@ -227,7 +227,7 @@ article {
     }
     li:last-child {
       a {
-        padding: 0 0 0 5px;
+        padding: 0 0 0 0px;
       }
     }
     li:last-child:after {
