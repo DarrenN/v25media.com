@@ -12,11 +12,9 @@ image: "/img/porsche_template_d.jpg"
 layout: "article"
 ---
 
-I had the opportunity to design and build an [interactive lookbook for Porsche](https://porschelookbook.com/) in 2011. Every year Porsche publishes a book of photos showcasing their cars for other Art Directors, in the hopes those cars will appear in ads and spreads. For 2011 I developed a web application that would allow users to drag and drop cars, backgrounds and other images onto a canvas to create on-the-fly layouts using Porsche cars. Users could upload their own images and also download static images of their layouts, or share them with friends.
+I had the opportunity to design and build an [interactive lookbook for Porsche](https://porschelookbook.com/) in 2011. Every year Porsche publishes a book of photos showcasing their cars for other Art Directors, in the hopes those cars will appear in ads and spreads. Working with Jonathan Sawitsky and Garret Mulder at [Gabardine](http://gabardine.com), I developed a web application that would allow users to drag and drop cars, backgrounds and other images onto a canvas to create on-the-fly layouts using Porsche cars. Users could upload their own images and also download static images of their layouts, or share them with friends.
 
-The application was built using [Backbone.js](http://documentcloud.github.com/backbone/) for organization and the [Raphael.js](http://raphaeljs.com/) SVG library to handle the layout feature. [Apache Batik](http://xmlgraphics.apache.org/batik/) was used on the server to rasterize the SVGs to PNG. 
-
-Since this was an HTML5/JavaScript application by design it works just as well on an iPad as on the desktop.
+One of the requirements was to make the application available on iPads, which ruled out using a Flash-based interface. The application was built with JavaScript using [Backbone.js](http://documentcloud.github.com/backbone/) for organization and the [Raphael.js](http://raphaeljs.com/) SVG library to handle the layout feature. Raphael allowed us to target Internet Explorer via it's SVG to VML mapping feature. [Apache Batik](http://xmlgraphics.apache.org/batik/) was used on the server to rasterize the SVGs to PNG. 
 
 <%= entry_asset({:url => '/img/porsche_template_d.jpg', :alt => 'Layout tool', :title => 'Layout tool | Porsche Lookbook'}, '/img/porsche_template_d.jpg') %>
 
