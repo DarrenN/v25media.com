@@ -1,8 +1,9 @@
-v25media.com
-------------
-
+## v25media.com
 ### Design portfolio for Darren Newton Creative Services.
 
-Simple static portfolio site generated with Middleman.
+Powered by [Middleman](http://beta.middlemanapp.com/)
 
-Design and content is Copyright (c) 2012 Darren Newton, all rights reserved.
+### Copyright / License information
+
+http://v25media.com is made with open source software, however, all of the content and templates are 
+Copyright 2012, Darren Newton, all rights reserved.
