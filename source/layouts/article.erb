@@ -16,13 +16,16 @@
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="<%= data.page.title %>" />
 		<meta property="og:url" content="http://v25media.com<%= current_page.url %>" />
-		<meta property="og:image" content="<%= current_page.data.image %>" />
+		<meta property="og:image" content="http://v25media.com<%= current_page.data.image %>" />
 		<meta property="og:description" content="<%= current_page.data.description %>" />
 
-		<meta name="twitter:card" value="summary">
-		<meta name="twitter:creator" value="@d_run">
+		<meta name="twitter:card" value="summary" />
+		<meta name="twitter:creator" value="@d_run" />
+		<meta name="twitter:title" value="<%= data.page.title %>" />
+		<meta name="twitter:description" value="<%= current_page.data.description %>" />
+		<meta name="twitter:image" value="http://v25media.com<%= current_page.data.image %>" />
 
-		<link rel="canonical" href="http://v25media.com<%= current_page.url %>">
+		<link rel="canonical" href="http://v25media.com<%= current_page.url %>" />
   		<%= favicon_tag 'favicon.ico' %>
   		<link type="text/plain" rel="author" href="http://v25media.com/humans.txt" />
 
@@ -51,7 +54,6 @@
 					<div class="metadata">
 						<ul itemprop="keywords">
 							<% data.page.tags.each do |tag| %>
-							<% if tag == 'Gabardine' then tag = '<a href="http://gabardine.com" rel="nofollow">Gabardine</a>'; end %>
 							<li><%= tag %></li>							  
 							<% end %>
 						</ul>
@@ -79,5 +81,5 @@
 </html>
 <!-- 
 	All content and design is 
-	Copyright (c) 2012 Darren Newton, all rights reserved
+	Copyright (c) <%= Date.today.year %> Darren Newton, all rights reserved
 -->

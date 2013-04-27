@@ -12,9 +12,12 @@
 		<meta name="description" content="Darren Newton Creative Services: providing Web Design, Web Development, IA and Online Strategy to the Masses.">
 
 		<meta name="msvalidate.01" content="BE7DA3BEF0F11153F6E4B5585C12DB20" />
-
-		<meta name="twitter:card" value="summary">
-		<meta name="twitter:creator" value="@d_run">
+		<% p1 = @pages.first %>
+		<meta name="twitter:card" value="summary" />
+		<meta name="twitter:creator" value="@d_run" />
+		<meta name="twitter:title" value="Darren Newton Creative Services" />
+		<meta name="twitter:description" value="Providing Web Development, Design and IA to the Masses." />
+		<meta name="twitter:image" value="http://v25media.com<%= p1.metadata[:page]['image'] %>" />
 
 		<link rel="canonical" href="http://v25media.com">
   		<%= favicon_tag 'favicon.ico' %>
@@ -48,7 +51,6 @@
 					<div class="metadata">
 						<ul itemprop="keywords">
 							<% page['tags'].each do |tag| %>
-							<% if tag == 'Gabardine' then tag = '<a href="http://gabardine.com" rel="nofollow">Gabardine</a>'; end %>
 							<li><%= tag %></li>						  
 							<% end %>
 						</ul>
@@ -68,7 +70,7 @@
 			<aside id="article-nav" class="container">
 				<ul>
 					<li id="article-nav-left">
-						<%= link_to "<span>&#9780;</span> Like anything you see here? Contact me on LinkedIn.", 'http://www.linkedin.com/in/darrennewton' %>
+						<%= link_to "<span>&#9780;</span> Like anything you see here? Contact me on Twitter.", 'https://twitter.com/d_run' %>
 					</li>
 					<li id="article-nav-right">
 						
