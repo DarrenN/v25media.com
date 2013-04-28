@@ -13,11 +13,17 @@
 
 		<meta name="msvalidate.01" content="BE7DA3BEF0F11153F6E4B5585C12DB20" />
 		<% p1 = @pages.first %>
+		<meta property="og:type" content="site" />
+		<meta property="og:title" content="Darren Newton Creative Services" />
+		<meta property="og:url" content="http://v25media.com/" />
+		<meta property="og:image" content="http://v25media.com<%= image_path p1.metadata[:page]['image'] %>" />
+		<meta property="og:description" content="Providing Web Development, Design and IA to the Masses." />
+
 		<meta name="twitter:card" value="summary" />
 		<meta name="twitter:creator" value="@d_run" />
 		<meta name="twitter:title" value="Darren Newton Creative Services" />
 		<meta name="twitter:description" value="Providing Web Development, Design and IA to the Masses." />
-		<meta name="twitter:image" value="http://v25media.com<%= p1.metadata[:page]['image'] %>" />
+		<meta name="twitter:image" value="http://v25media.com<%= image_path p1.metadata[:page]['image'] %>" />
 
 		<link rel="canonical" href="http://v25media.com">
   		<%= favicon_tag 'favicon.ico' %>
@@ -89,5 +95,5 @@
 </html>
 <!-- 
 	All content and design is 
-	Copyright (c) 2012 Darren Newton, all rights reserved
+	Copyright (c) <%= Date.today.year %> Darren Newton, all rights reserved
 -->

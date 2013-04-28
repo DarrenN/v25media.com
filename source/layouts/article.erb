@@ -16,14 +16,14 @@
 		<meta property="og:type" content="article" />
 		<meta property="og:title" content="<%= data.page.title %>" />
 		<meta property="og:url" content="http://v25media.com<%= current_page.url %>" />
-		<meta property="og:image" content="http://v25media.com<%= current_page.data.image %>" />
+		<meta property="og:image" content="http://v25media.com<%= image_path current_page.data.image %>" />
 		<meta property="og:description" content="<%= current_page.data.description %>" />
 
 		<meta name="twitter:card" value="summary" />
 		<meta name="twitter:creator" value="@d_run" />
 		<meta name="twitter:title" value="<%= data.page.title %>" />
 		<meta name="twitter:description" value="<%= current_page.data.description %>" />
-		<meta name="twitter:image" value="http://v25media.com<%= current_page.data.image %>" />
+		<meta name="twitter:image" value="http://v25media.com<%= image_path current_page.data.image %>" />
 
 		<link rel="canonical" href="http://v25media.com<%= current_page.url %>" />
   		<%= favicon_tag 'favicon.ico' %>
