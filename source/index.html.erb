@@ -28,12 +28,6 @@
 		<link rel="canonical" href="http://v25media.com">
   		<%= favicon_tag 'favicon.ico' %>
   		<link type="text/plain" rel="author" href="http://v25media.com/humans.txt" />
-
-		<%= stylesheet_link_tag 'screen.css' %>
-
-		<script src="http://use.typekit.com/lbz5aep.js"></script>
-
-		<%= partial "google" %>
 	</head>
 	<body id="home" itemscope itemtype="http://schema.org/ItemList">
 
@@ -89,6 +83,12 @@
 		</div>
 
 		<%= partial "footer" %>
+
+		<%= stylesheet_link_tag 'screen.css' %>
+
+		<script src="http://use.typekit.com/lbz5aep.js"></script>
+
+		<%= partial "google" %>
 
 		<script>try{Typekit.load();}catch(e){}</script>
 	</body>
