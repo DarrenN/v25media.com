@@ -48,7 +48,7 @@
 					<div class="metadata">
 						<ul itemprop="keywords">
 							<% data.page.tags.each do |tag| %>
-							<li><%= tag %></li>							  
+							<li><%= tag %></li>
 							<% end %>
 						</ul>
 					</div>
@@ -61,7 +61,7 @@
 
 		<div id="article-nav-container">
 			<aside id="article-nav" class="container">
-				
+
 			</aside>
 			<aside id="article-nav-mobile">
 				<a href="/"><span>&lt;</span> Back to homepage</a>
@@ -71,12 +71,12 @@
 		<%= partial "footer" %>
 
 		<%= stylesheet_link_tag 'screen.css' %>
-		<script src="http://use.typekit.com/lbz5aep.js"></script>
-		<%= partial "google" %>		
-		<script>try{Typekit.load();}catch(e){}</script>
+    <script src="https://use.typekit.net/auq4pon.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<%= partial "google" %>
 	</body>
 </html>
-<!-- 
-	All content and design is 
+<!--
+	All content and design is
 	Copyright (c) <%= Date.today.year %> Darren Newton, all rights reserved
 -->

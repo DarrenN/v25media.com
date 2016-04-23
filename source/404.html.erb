@@ -13,14 +13,8 @@
 
     <meta name="msvalidate.01" content="BE7DA3BEF0F11153F6E4B5585C12DB20" />
 
-
     <%= favicon_tag 'favicon.ico' %>
-
     <%= stylesheet_link_tag 'screen.css' %>
-
-    <script src="http://use.typekit.com/lbz5aep.js"></script>
-
-    <%= partial "google" %>
   </head>
   <body id="generic" itemscope itemtype="http://schema.org/Blog">
 
@@ -49,11 +43,12 @@
     </div>
 
     <%= partial "footer" %>
-
-    <script>try{Typekit.load();}catch(e){}</script>
+    <%= partial "google" %>
+    <script src="https://use.typekit.net/auq4pon.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </body>
 </html>
-<!-- 
-  All content and design is 
-  Copyright (c) 2012 Darren Newton, all rights reserved
+<!--
+  All content and design is
+  Copyright (c) 2016 Darren Newton, all rights reserved
 -->
