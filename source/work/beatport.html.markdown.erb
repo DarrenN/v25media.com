@@ -1,0 +1,27 @@
+---
+title: "Beatport Pro"
+author: Darren
+date: 2015-02-07 12:00
+tags:
+  - Engineering
+  - Web Application
+description: "Beatport Pro | Front-end engineering for the Professional DJ"
+image: "/img/beatport_pro_desktop.jpg"
+layout: "article"
+---
+
+I had the opportunity to work with an amazing team to build and launch [Beatport Pro](http://pro.beatport.com) in February 2015. Beatport Pro is where professional DJs buy high-quality files to use in their sets at clubs and parties around the globe.
+
+This was a particularly challenging project, as the new application had to work with existing APIs and data sets that were rather long in the tooth. We needed to preserve most of the features present in the original store, while creating a completely responsive design that could accommodate a variety of mobile experiences.
+
+<%= entry_asset({:url => '/img/beatport_pro_desktop.jpg', :alt => 'Beatport Pro Desktop', :title => 'Desktop browser layout for Beatport Pro'}, 'http://pro.beatport.com') %>
+
+As the lead Front-end Engineer I worked with [Joe Sullivan](http://joesul.li) to roll a small CoffeeScript framework specific to our needs. Leaning heavily on [PJAX](https://github.com/defunkt/jquery-pjax) and [Bacon.js](http://baconjs.github.io/) (with a smattering of [Backbone](http://backbonejs.org/) in places) we were able to create a light and nimble front-end application. A number of interesting patterns and techniques were developed to solve problems, many of which I will blog about in the future.
+
+All of the responsive UI/UX design, HTML and SASS was handled by [Nikki Lee](http://imnikkilee.com), who is hands down one of the most capable, organized and talented interactive designers I've worked with. The design is very responsive, adjusting to a variety of mobile aspect ratios.
+
+<%= entry_asset({:url => '/img/beatport_pro_iphone.jpg', :alt => 'Beatport Pro Mobile', :title => 'Mobile browser layout for Beatport Pro'}, 'http://pro.beatport.com') %>
+
+On the server side [Rob Madole](http://www.robmadole.com/), [Clint Newsom](https://www.linkedin.com/profile/view?id=41661834), [Bassem Ali](https://www.linkedin.com/profile/view?id=183644020), [James Free](https://www.linkedin.com/profile/view?id=89511750) and [Sean Broderick](https://github.com/hakutsuru) crafted a performant Flask application to consume the legacy APIs and provide a new clean server foundation for the client side to work with.
+
+I'm very proud of what this team was able to accomplish within the time allowed and look forward to what they will do with the project in the future.
